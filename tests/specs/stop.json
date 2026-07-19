@@ -3,11 +3,17 @@
     "name": "/stop",
     "steps": [
       {
+        "send": { "text": "/start" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "👋 Welcome! Tap a button below to get started." } }
+        ]
+      },
+      {
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Unregister chat from alert subscriptions"
+              "text": "⚠️ This will disable alerts for this chat.\n\nAre you sure you want to stop?"
             }
           }
         ],
