@@ -1,9 +1,14 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { readFileSync } from "node:fs";
 import { buildBot } from "../src/bot.js";
 import { runSpecs, parseBotSpec } from "../src/toolkit/index.js";
+import { resetStores } from "../src/storage.js";
 
 describe("buildBot handler loader", () => {
+  beforeEach(() => {
+    resetStores();
+  });
+
   it("loads src/handlers/start.ts so /start replies via the harness", async () => {
     const raw = JSON.parse(
       readFileSync(new URL("./specs/start.json", import.meta.url), "utf8"),

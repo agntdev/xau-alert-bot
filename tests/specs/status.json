@@ -3,11 +3,17 @@
     "name": "/status",
     "steps": [
       {
+        "send": { "text": "/start" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "👋 Welcome! Tap a button below to get started." } }
+        ]
+      },
+      {
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Show last 10 alerts and delivery status"
+              "text": "📊 No alerts yet. Configure your TradingView webhook to start receiving alerts."
             }
           }
         ],

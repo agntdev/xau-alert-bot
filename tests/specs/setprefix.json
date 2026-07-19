@@ -7,7 +7,7 @@
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Set custom prefix for all alerts"
+              "text": "📝 Current prefix: None\n\nSend a new prefix to set it, or send /cancel to keep the current one."
             }
           }
         ],
